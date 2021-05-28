@@ -1,0 +1,1134 @@
+<!DOCTYPE html>
+<html>
+
+<!--
+    CS230 24 Hour Coding Test-Emmett Mulroy (67578687)
+-->
+<head>
+    <title>24 Hour Coding Test</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Use Bootstrap for the form styling -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <!-- Use W3.CSS for the Modal -->
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <!-- jQuery and Bootstrap JS -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <style>
+        /* Extra Styles for the Bootstrap Forms */
+        h1 {
+            font: 30px Verdana;
+            text-align: center;
+        }
+        h2 {
+            font: 20px Verdana;
+            text-align: center;
+        }
+        h3 {
+            font: 20px Verdana;
+            text-align: center;
+        }
+        legend {
+            padding: 10px;
+            font: 30px Verdana
+        }
+    </style>
+</head>
+
+<body>
+<h1>24 Hour Coding Test</h1>
+<h2>Emmett Mulroy-67578687</h2>
+<h2>Add users to send to the database, display the database, use buttons to automatically update and delete users</h2>
+<h3>Please add a user first, followed by the home and shipping addresses you want this user to have</h3>
+
+
+<!--Useful References:
+
+HTTP POST Request Method: https://developer.mozilla.org/en-US/docs/Web/HTTP/Methods/POST
+HTTP GET Request Method:  https://developer.mozilla.org/en-US/docs/Web/HTTP/Methods/GET
+
+There are other HTTP Request Method verbs; you can read about them on MDN Web Docs also.
+
+HTTP request methods:     https://developer.mozilla.org/en-US/docs/Web/HTTP/Methods
+
+W3Schools.com has an excellent tutorial on the <form> element.
+It is located here:       https://www.w3schools.com/tags/tag_form.asp--->
+
+<br />
+
+<!--
+    Bootstrap Styled Form: Add User to Database
+    Generated using the Bootsnipp Form Builder and Generator for Bootstrap
+    https://bootsnipp.com/forms
+-->
+<div>
+    <div class="container">
+        <div class="row justify-content-center">
+            <form id="addUserForm" class="form-horizontal">
+                <fieldset>
+                    <!-- Form Name -->
+                    <legend>Add Client to Database</legend>
+
+                    <!-- Text Input - Title -->
+                    <div class="form-group">
+                        <label class = "col-md-4 control-label" for="title">Select your title:</label>
+                        <select name="title" id="title">
+                            <option value="Mx">Mx</option>
+                            <option value="Mr">Mr</option>
+                            <option value="Ms">Ms</option>
+                            <option value="Mrs">Mrs</option>
+                            <option value="Miss">Miss</option>
+                            <option value="Dr">Dr</option>
+                            <option value="Other">Other</option>
+                        </select>
+                    </div>
+
+                    <!-- Text Input - First Name -->
+                    <div class="form-group">
+                        <label class="col-md-4 control-label" for="firstname">First Name</label>
+                        <div class="col-md-4">
+                            <input id="firstname" name="firstname" placeholder="First Name"
+                                   class="form-control input-md">
+                            <span class="help-block">Please enter your first name!</span>
+                        </div>
+                    </div>
+
+                    <!-- Text Input - Surname -->
+                    <div class="form-group">
+                        <label class="col-md-4 control-label" for="surname">Surname</label>
+                        <div class="col-md-4">
+                            <input id="surname" name="surname" type="text" placeholder="Surname"
+                                   class="form-control input-md">
+                            <span class="help-block">Please enter your Surname!</span>
+                        </div>
+                    </div>
+
+                    <!-- Text Input - Mobile -->
+                    <div class="form-group">
+                        <label class="col-md-4 control-label" for="mobile">Mobile</label>
+                        <div class="col-md-4">
+                            <input id="mobile" name="mobile" placeholder="Mobile"
+                                   class="form-control input-md">
+                            <span class="help-block">Please enter your mobile!</span>
+                        </div>
+                    </div>
+
+                    <!-- Text Input - Home Phone -->
+                    <div class="form-group">
+                        <label class="col-md-4 control-label" for="homephone">Home Phone</label>
+                        <div class="col-md-4">
+                            <input id="homephone" name="homephone" placeholder="Home Phone"
+                                   class="form-control input-md">
+                            <span class="help-block">Please enter your home number!</span>
+                        </div>
+                    </div>
+
+                    <!-- Text Input - Email -->
+                    <div class="form-group">
+                        <label class="col-md-4 control-label" for="email">Email</label>
+                        <div class="col-md-4">
+                            <input id="email" name="email" type="text" placeholder="email"
+                                   class="form-control input-md">
+                            <span class="help-block">Please enter your Email address!</span>
+                        </div>
+                    </div>
+
+                    <!-- Text Input - Address Line 1 -->
+                    <div class="form-group">
+                        <label class="col-md-4 control-label" for="line1">Address Line 1</label>
+                        <div class="col-md-4">
+                            <input id="line1" name="line1" type="text" placeholder="Address Line 1"
+                                   class="form-control input-md">
+                            <span class="help-block">Please enter the first line of your address!</span>
+                        </div>
+                    </div>
+
+                    <!-- Text Input - Address Line 2 -->
+                    <div class="form-group">
+                        <label class="col-md-4 control-label" for="line2">Address Line 2</label>
+                        <div class="col-md-4">
+                            <input id="line2" name="line2" type="text" placeholder="Address Line 2"
+                                   class="form-control input-md">
+                            <span class="help-block">Please enter the second line of your address!</span>
+                        </div>
+                    </div>
+
+                    <!-- Text Input - Town -->
+                    <div class="form-group">
+                        <label class="col-md-4 control-label" for="town">Town</label>
+                        <div class="col-md-4">
+                            <input id="town" name="town" type="text" placeholder="Town"
+                                   class="form-control input-md">
+                            <span class="help-block">Please enter the name of your town!</span>
+                        </div>
+                    </div>
+
+                    <!-- Text Input - County -->
+                    <div class="form-group">
+                        <label class="col-md-4 control-label" for="county">County</label>
+                        <div class="col-md-4">
+                            <input id="county" name="county" type="text" placeholder="County"
+                                   class="form-control input-md">
+                            <span class="help-block">Please enter the name of your county!</span>
+                        </div>
+                    </div>
+
+                    <!-- Text Input - Eircode -->
+                    <div class="form-group">
+                        <label class="col-md-4 control-label" for="eircode">Eircode</label>
+                        <div class="col-md-4">
+                            <input id="eircode" name="eircode" type="text" placeholder="Eircode"
+                                   class="form-control input-md">
+                            <span class="help-block">Please enter eircode!</span>
+                        </div>
+                    </div>
+
+                    <!-- Text Input - Date of Birth -->
+                    <div class="form-group">
+                        <label class="col-md-4 control-label" for="dob">Date of Birth</label>
+                        <div class="col-md-4">
+                            <input id="dob" name="dob" type="text" placeholder="Date of Birth"
+                                   class="form-control input-md">
+                            <span class="help-block">Please enter your date of birth!</span>
+                        </div>
+                    </div>
+
+                    <!-- Text Input - Parent or Guardian -->
+                    <div class="form-group">
+                        <label class="col-md-4 control-label" for="parent_guardian">Name of parent or guardian</label>
+                        <div class="col-md-4">
+                            <input id="parent_guardian" name="parent_guardian" type="text" placeholder="Name of parent or guardian"
+                                   class="form-control input-md">
+                            <span class="help-block">Please enter the name of your parent or guardian (if not applicable type 'NA'!</span>
+                        </div>
+                    </div>
+
+                    <!-- Text Input - Permission_To_Message -->
+                    <div class="form-group">
+                        <label class="col-md-4 control-label" for="permission_to_message">Specify if we may contact you</label>
+                        <div class="col-md-4">
+                            <input id="permission_to_message" name="permission_to_message" type="text" placeholder="Specify if we may contact you"
+                                   class="form-control input-md">
+                            <span class="help-block">Specify if we may contact you!</span>
+                        </div>
+                    </div>
+
+                    <!-- Text Input - Date Registered -->
+                    <div class="form-group">
+                        <label class="col-md-4 control-label" for="date_registered">Date Registered</label>
+                        <div class="col-md-4">
+                            <input id="date_registered" name="date_registered" type="text" placeholder="Date Registered"
+                                   class="form-control input-md">
+                            <span class="help-block">Date Registered!</span>
+                        </div>
+                    </div>
+
+                    <!-- Text Input - Doctor -->
+                    <div class="form-group">
+                        <label class="col-md-4 control-label" for="doctor">Name of doctor</label>
+                        <div class="col-md-4">
+                            <input id="doctor" name="doctor" type="text" placeholder="Name of doctor"
+                                   class="form-control input-md">
+                            <span class="help-block">Name of doctor!</span>
+                        </div>
+                    </div>
+
+                    <!-- Text Input - Referral -->
+                    <div class="form-group">
+                        <label class="col-md-4 control-label" for="reffered_by">Referred by</label>
+                        <div class="col-md-4">
+                            <input id="reffered_by" name="reffered_by" type="text" placeholder="Referred by"
+                                   class="form-control input-md">
+                            <span class="help-block">Name of person who referred you!</span>
+                        </div>
+                    </div>
+
+                    <!-- Submit -->
+                    <div class="form-group">
+                        <label class="col-md-4 control-label" for="submit"></label>
+                        <div class="col-md-4">
+                            <input type="submit" value="Send Client Data" class="btn btn-primary">
+                        </div>
+                    </div>
+                </fieldset>
+            </form>
+        </div>
+    </div>
+</div>
+
+<br />
+
+<!--Show Users--->
+<div>
+    <div class="container">
+        <div class="row justify-content-center">
+            <form id="getUserDatabaseForm" class="form-horizontal">
+                <fieldset>
+                    <!-- Form Name -->
+                    <legend>Show Client Database</legend>
+
+                    <!-- Textarea -->
+                    <div class="form-group">
+                        <label class="col-md-4 control-label" for="showUserDatabase">Client Database</label>
+                        <div class="col-md-4">
+                                <textarea class="form-control" id="showUserDatabase"
+                                          name="showUserDatabase">Retrieved Database displayed here!</textarea>
+                        </div>
+                    </div>
+
+                    <!-- Submit -->
+                    <div class="form-group">
+                        <label class="col-md-4 control-label" for="submit"></label>
+                        <div class="col-md-4">
+                            <input type="submit" value="Get Client Database" class="btn btn-primary">
+                        </div>
+                    </div>
+
+                </fieldset>
+            </form>
+        </div>
+    </div>
+</div>
+
+<div>
+    <div class="container">
+        <div class="row justify-content-center">
+            <form id="updateUser" class="form-horizontal">
+                <fieldset>
+                    <!-- Form Name -->
+                    <legend>Update Client Information</legend>
+
+                    <!-- Textarea -->
+                    <div class="form-group">
+                        <label class="col-md-4 control-label" for="updateUser">This button will change the client "Emmett Mulroy"'s first and last name to "Rick" and "Marshall"</label>
+                    </div>
+
+                    <!-- Submit -->
+                    <div class="form-group">
+                        <label class="col-md-4 control-label" for="submit"></label>
+                        <div class="col-md-4">
+                            <input type="submit" value="Update last user" class="btn btn-primary">
+                        </div>
+                    </div>
+
+                </fieldset>
+            </form>
+        </div>
+    </div>
+</div>
+
+<div>
+    <div class="container">
+        <div class="row justify-content-center">
+            <form id="deleteUser" class="form-horizontal">
+                <fieldset>
+                    <!-- Form Name -->
+                    <legend>Delete Client from Database</legend>
+
+                    <!-- Textarea -->
+                    <div class="form-group">
+                        <label class="col-md-4 control-label" for="deleteUser">This button will delete the client "Danny Deleto" from the table</label>
+                    </div>
+
+                    <!-- Submit -->
+                    <div class="form-group">
+                        <label class="col-md-4 control-label" for="submit"></label>
+                        <div class="col-md-4">
+                            <input type="submit" value="Delete specified client" class="btn btn-primary">
+                        </div>
+                    </div>
+
+                </fieldset>
+            </form>
+        </div>
+    </div>
+</div>
+
+<!--***************************************************************************************************************--->
+
+<div>
+    <div class="container">
+        <div class="row justify-content-center">
+            <form id="addTherapistForm" class="form-horizontal">
+                <fieldset>
+                    <!-- Form Name -->
+                    <legend>Add Therapist to Database</legend>
+
+                    <!-- Text Input - Title -->
+                    <div class="form-group">
+                        <label class = "col-md-4 control-label" for="t_title">Select your title:</label>
+                        <select name="t_title" id="t_title">
+                            <option value="Mx">Mx</option>
+                            <option value="Mr">Mr</option>
+                            <option value="Ms">Ms</option>
+                            <option value="Mrs">Mrs</option>
+                            <option value="Miss">Miss</option>
+                            <option value="Dr">Dr</option>
+                            <option value="Other">Other</option>
+                        </select>
+                    </div>
+
+                    <!-- Text Input - First Name -->
+                    <div class="form-group">
+                        <label class="col-md-4 control-label" for="t_firstname">First Name</label>
+                        <div class="col-md-4">
+                            <input id="t_firstname" name="t_firstname" placeholder="First Name"
+                                   class="form-control input-md">
+                            <span class="help-block">Please enter your first name!</span>
+                        </div>
+                    </div>
+
+                    <!-- Text Input - Surname -->
+                    <div class="form-group">
+                        <label class="col-md-4 control-label" for="t_surname">Surname</label>
+                        <div class="col-md-4">
+                            <input id="t_surname" name="t_surname" type="text" placeholder="Surname"
+                                   class="form-control input-md">
+                            <span class="help-block">Please enter your Surname!</span>
+                        </div>
+                    </div>
+
+                    <!-- Text Input - Mobile -->
+                    <div class="form-group">
+                        <label class="col-md-4 control-label" for="t_mobile">Mobile</label>
+                        <div class="col-md-4">
+                            <input id="t_mobile" name="t_mobile" placeholder="Mobile"
+                                   class="form-control input-md">
+                            <span class="help-block">Please enter your mobile!</span>
+                        </div>
+                    </div>
+
+                    <!-- Text Input - Home Phone -->
+                    <div class="form-group">
+                        <label class="col-md-4 control-label" for="t_homephone">Home Phone</label>
+                        <div class="col-md-4">
+                            <input id="t_homephone" name="t_homephone" placeholder="Home Phone"
+                                   class="form-control input-md">
+                            <span class="help-block">Please enter your home number!</span>
+                        </div>
+                    </div>
+
+                    <!-- Text Input - Email -->
+                    <div class="form-group">
+                        <label class="col-md-4 control-label" for="t_email">Email</label>
+                        <div class="col-md-4">
+                            <input id="t_email" name="t_email" type="text" placeholder="email"
+                                   class="form-control input-md">
+                            <span class="help-block">Please enter your Email address!</span>
+                        </div>
+                    </div>
+
+                    <!-- Text Input - Address Line 1 -->
+                    <div class="form-group">
+                        <label class="col-md-4 control-label" for="t_line1">Address Line 1</label>
+                        <div class="col-md-4">
+                            <input id="t_line1" name="t_line1" type="text" placeholder="Address Line 1"
+                                   class="form-control input-md">
+                            <span class="help-block">Please enter the first line of your address!</span>
+                        </div>
+                    </div>
+
+                    <!-- Text Input - Address Line 2 -->
+                    <div class="form-group">
+                        <label class="col-md-4 control-label" for="t_line2">Address Line 2</label>
+                        <div class="col-md-4">
+                            <input id="t_line2" name="t_line2" type="text" placeholder="Address Line 2"
+                                   class="form-control input-md">
+                            <span class="help-block">Please enter the second line of your address!</span>
+                        </div>
+                    </div>
+
+                    <!-- Text Input - Town -->
+                    <div class="form-group">
+                        <label class="col-md-4 control-label" for="t_town">Town</label>
+                        <div class="col-md-4">
+                            <input id="t_town" name="t_town" type="text" placeholder="Town"
+                                   class="form-control input-md">
+                            <span class="help-block">Please enter the name of your town!</span>
+                        </div>
+                    </div>
+
+                    <!-- Text Input - County -->
+                    <div class="form-group">
+                        <label class="col-md-4 control-label" for="t_county">County</label>
+                        <div class="col-md-4">
+                            <input id="t_county" name="t_county" type="text" placeholder="County"
+                                   class="form-control input-md">
+                            <span class="help-block">Please enter the name of your county!</span>
+                        </div>
+                    </div>
+
+                    <!-- Text Input - Eircode -->
+                    <div class="form-group">
+                        <label class="col-md-4 control-label" for="t_eircode">Eircode</label>
+                        <div class="col-md-4">
+                            <input id="t_eircode" name="t_eircode" type="text" placeholder="Eircode"
+                                   class="form-control input-md">
+                            <span class="help-block">Please enter eircode!</span>
+                        </div>
+                    </div>
+
+                    <!-- Submit -->
+                    <div class="form-group">
+                        <label class="col-md-4 control-label" for="submit"></label>
+                        <div class="col-md-4">
+                            <input type="submit" value="Send User Data" class="btn btn-primary">
+                        </div>
+                    </div>
+                </fieldset>
+            </form>
+        </div>
+    </div>
+</div>
+
+<br />
+
+<!--Show Users--->
+<div>
+    <div class="container">
+        <div class="row justify-content-center">
+            <form id="getTherapistDatabaseForm" class="form-horizontal">
+                <fieldset>
+                    <!-- Form Name -->
+                    <legend>Show Therapist Database</legend>
+
+                    <!-- Textarea -->
+                    <div class="form-group">
+                        <label class="col-md-4 control-label" for="showTherapistDatabase">Therapist Database</label>
+                        <div class="col-md-4">
+                                <textarea class="form-control" id="showTherapistDatabase"
+                                          name="showTherapistDatabase">Retrieved Database displayed here!</textarea>
+                        </div>
+                    </div>
+
+                    <!-- Submit -->
+                    <div class="form-group">
+                        <label class="col-md-4 control-label" for="submit"></label>
+                        <div class="col-md-4">
+                            <input type="submit" value="Get Therapist Database" class="btn btn-primary">
+                        </div>
+                    </div>
+
+                </fieldset>
+            </form>
+        </div>
+    </div>
+</div>
+
+<div>
+    <div class="container">
+        <div class="row justify-content-center">
+            <form id="updateTherapist" class="form-horizontal">
+                <fieldset>
+                    <!-- Form Name -->
+                    <legend>Update Therapist Information</legend>
+
+                    <!-- Textarea -->
+                    <div class="form-group">
+                        <label class="col-md-4 control-label" for="updateTherapist">This button will change "Dr. Grace Kelly" to "Dr. Stu Pickles"</label>
+                    </div>
+
+                    <!-- Submit -->
+                    <div class="form-group">
+                        <label class="col-md-4 control-label" for="submit"></label>
+                        <div class="col-md-4">
+                            <input type="submit" value="Update Therapist" class="btn btn-primary">
+                        </div>
+                    </div>
+
+                </fieldset>
+            </form>
+        </div>
+    </div>
+</div>
+
+<div>
+    <div class="container">
+        <div class="row justify-content-center">
+            <form id="deleteTherapist" class="form-horizontal">
+                <fieldset>
+                    <!-- Form Name -->
+                    <legend>Delete Therapist from Database</legend>
+
+                    <!-- Textarea -->
+                    <div class="form-group">
+                        <label class="col-md-4 control-label" for="deleteTherapist">This button will delete "Dr. Dee Leteme" from the table</label>
+                    </div>
+
+                    <!-- Submit -->
+                    <div class="form-group">
+                        <label class="col-md-4 control-label" for="submit"></label>
+                        <div class="col-md-4">
+                            <input type="submit" value="Delete specified therapist" class="btn btn-primary">
+                        </div>
+                    </div>
+
+                </fieldset>
+            </form>
+        </div>
+    </div>
+</div>
+
+<!--***************************************************************************************************************--->
+
+<div>
+    <div class="container">
+        <div class="row justify-content-center">
+            <form id="addSessionForm" class="form-horizontal">
+                <fieldset>
+                    <!-- Form Name -->
+                    <legend>Add Physiotherapy Session to Database</legend>
+
+                    <!-- Text Input - Date of Session -->
+                    <div class="form-group">
+                        <label class="col-md-4 control-label" for="s_date">Session Date</label>
+                        <div class="col-md-4">
+                            <input id="s_date" name="s_date" placeholder="Session Date"
+                                   class="form-control input-md">
+                            <span class="help-block">Please enter the date of the session!</span>
+                        </div>
+                    </div>
+
+                    <!-- Text Input - Time of Session -->
+                    <div class="form-group">
+                        <label class="col-md-4 control-label" for="s_time">Session Time</label>
+                        <div class="col-md-4">
+                            <input id="s_time" name="s_time" placeholder="Session Time"
+                                   class="form-control input-md">
+                            <span class="help-block">Please enter the time of the session!</span>
+                        </div>
+                    </div>
+
+                    <!-- Text Input - Client -->
+                    <div class="form-group">
+                        <label class="col-md-4 control-label" for="s_client">Client</label>
+                        <div class="col-md-4">
+                            <input id="s_client" name="s_client" type="text" placeholder="Client"
+                                   class="form-control input-md">
+                            <span class="help-block">Please enter the clients full name!</span>
+                        </div>
+                    </div>
+
+                    <!-- Text Input - Physiotherapist name -->
+                    <div class="form-group">
+                        <label class="col-md-4 control-label" for="s_therapist">Physiotherapist name</label>
+                        <div class="col-md-4">
+                            <input id="s_therapist" name="s_therapist" placeholder="Name of Therapist"
+                                   class="form-control input-md">
+                            <span class="help-block">Please enter your physiotherapists name!</span>
+                        </div>
+                    </div>
+
+                    <!-- Text Input - Session Fee -->
+                    <div class="form-group">
+                        <label class="col-md-4 control-label" for="s_fee">Session Fee</label>
+                        <div class="col-md-4">
+                            <input id="s_fee" name="s_fee" placeholder="Session Fee (€)"
+                                   class="form-control input-md">
+                            <span class="help-block">Please enter the amount in euro!</span>
+                        </div>
+                    </div>
+
+                    <!-- Text Input - Session Number -->
+                    <div class="form-group">
+                        <label class="col-md-4 control-label" for="s_number">Session Number</label>
+                        <div class="col-md-4">
+                            <input id="s_number" name="s_number" type="text" placeholder="Session Number"
+                                   class="form-control input-md">
+                            <span class="help-block">Please enter the session number!</span>
+                        </div>
+                    </div>
+
+                    <!-- Text Input - Session Duration -->
+                    <div class="form-group">
+                        <label class = "col-md-4 control-label" for="s_duration">Select duration:</label>
+                        <select name="s_duration" id="s_duration">
+                            <option value="60m">60 Minutes</option>
+                            <option value="Cancelled">Cancelled</option>
+                            <option value="NoShow">No Show</option>
+                        </select>
+                    </div>
+
+                    <!-- Text Input - Session Type -->
+                    <div class="form-group">
+                        <label class = "col-md-4 control-label" for="s_type">Select Type of Session:</label>
+                        <select name="s_type" id="s_type">
+                            <option value="Assessment">Assessment</option>
+                            <option value="Massage">Massage Therapy</option>
+                            <option value="Stretching">Stretching and Exercising</option>
+                            <option value="Technology">Technology (Lasers and/or Ultrasound</option>
+                            <option value="Hydrotherapy">Hydrotherapy</option>
+                            <option value="Electrotherapy">Electrotherapy</option>
+                            <option value="Other">Other (Please Specify Below)</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="col-md-4 control-label" for="s_other">Please specify therapy if you selected "Other" above</label>
+                        <div class="col-md-4">
+                            <input id="s_other" name="s_other" type="text" placeholder="Session notes"
+                                   class="form-control input-md">
+                            <span class="help-block">Please enter relevant session details!</span>
+                        </div>
+                    </div>
+
+                    <!-- Submit -->
+                    <div class="form-group">
+                        <label class="col-md-4 control-label" for="submit"></label>
+                        <div class="col-md-4">
+                            <input type="submit" value="Send Session Data" class="btn btn-primary">
+                        </div>
+                    </div>
+                </fieldset>
+            </form>
+        </div>
+    </div>
+</div>
+
+<br />
+
+<!--Show Users--->
+<div>
+    <div class="container">
+        <div class="row justify-content-center">
+            <form id="getSessionDatabaseForm" class="form-horizontal">
+                <fieldset>
+                    <!-- Form Name -->
+                    <legend>Show Session Database</legend>
+
+                    <!-- Textarea -->
+                    <div class="form-group">
+                        <label class="col-md-4 control-label" for="showSessionDatabase">Session Database</label>
+                        <div class="col-md-4">
+                                <textarea class="form-control" id="showSessionDatabase"
+                                          name="showSessionDatabase">Retrieved Database displayed here!</textarea>
+                        </div>
+                    </div>
+
+                    <!-- Submit -->
+                    <div class="form-group">
+                        <label class="col-md-4 control-label" for="submit"></label>
+                        <div class="col-md-4">
+                            <input type="submit" value="Get Session Database" class="btn btn-primary">
+                        </div>
+                    </div>
+
+                </fieldset>
+            </form>
+        </div>
+    </div>
+</div>
+
+<div>
+    <div class="container">
+        <div class="row justify-content-center">
+            <form id="updateSession" class="form-horizontal">
+                <fieldset>
+                    <!-- Form Name -->
+                    <legend>Update Session Information</legend>
+
+                    <!-- Textarea -->
+                    <div class="form-group">
+                        <label class="col-md-4 control-label" for="updateSession">This button will change "Emmett Mulroy" to "Jill Mulroy" and retain the session</label>
+                    </div>
+
+                    <!-- Submit -->
+                    <div class="form-group">
+                        <label class="col-md-4 control-label" for="submit"></label>
+                        <div class="col-md-4">
+                            <input type="submit" value="Update Session" class="btn btn-primary">
+                        </div>
+                    </div>
+
+                </fieldset>
+            </form>
+        </div>
+    </div>
+</div>
+
+<div>
+    <div class="container">
+        <div class="row justify-content-center">
+            <form id="deleteSession" class="form-horizontal">
+                <fieldset>
+                    <!-- Form Name -->
+                    <legend>Delete Session from Database</legend>
+
+                    <!-- Textarea -->
+                    <div class="form-group">
+                        <label class="col-md-4 control-label" for="deleteSession">This button will delete "Danny Deletos" appointment on the 10/05/21</label>
+                    </div>
+
+                    <!-- Submit -->
+                    <div class="form-group">
+                        <label class="col-md-4 control-label" for="submit"></label>
+                        <div class="col-md-4">
+                            <input type="submit" value="Delete specified session" class="btn btn-primary">
+                        </div>
+                    </div>
+
+                </fieldset>
+            </form>
+        </div>
+    </div>
+</div>
+
+<!--
+    jQuery Scripts used to implement form processing and Ajax functionality
+    https://www.w3schools.com/w3css/w3css_modal.asp
+-->
+<script>
+    $(document).ready(function () {
+
+        // handle "Add User to Database" submit button click
+        $('#addUserForm').submit(function (e) {
+            var userAddress = {
+                line1: $('input[name=line1]').val(),
+                line2: $('input[name=line2]').val(),
+                town: $('input[name=town]').val(),
+                county: $('input[name=county]').val(),
+                eircode: $('input[name=eircode]').val()
+            }
+            var details = {
+                dob: $('input[name=dob]').val(),
+                parent_guardian: $('input[name=parent_guardian]').val(),
+                permission_to_message: $('input[name=permission_to_message]').val(),
+                date_registered: $('input[name=date_registered]').val(),
+                doctor: $('input[name=doctor]').val(),
+                reffered_by: $('input[name=reffered_by]').val()
+            }
+            var user = {
+                title: $("#title").val(),
+                firstname: $('input[name=firstname]').val(),
+                surname: $('input[name=surname]').val(),
+                mobile: $('input[name=mobile]').val(),
+                homephone: $('input[name=homephone]').val(),
+                email: $('input[name=email]').val(),
+                homeaddress: userAddress,
+                addtional: details
+            };
+            $.ajax({
+                type: 'POST',
+                url: 'http://localhost:8000/api/user',
+                data: user
+            })
+                .done(function (data) {
+                    // reset the form for next time!
+                    $("#title").val('');
+                    $('input[name=firstname]').val('');
+                    $('input[name=surname]').val('');
+                    $('input[name=mobile]').val('');
+                    $('input[name=homephone]').val('');
+                    $('input[name=email]').val('');
+                    $('input[name=line1]').val('');
+                    $('input[name=line2]').val('');
+                    $('input[name=town]').val('');
+                    $('input[name=county]').val('');
+                    $('input[name=eircode]').val('');
+                    $('input[name=dob]').val('');
+                    $('input[name=parent_guardian]').val('');
+                    $('input[name=permission_to_message]').val('');
+                    $('input[name=date_registered]').val('');
+                    $('input[name=doctor]').val('');
+                    $('input[name=reffered_by]').val('');
+                    // show confirmation message from API
+                    showUserModal(data);
+                    console.log(data);
+                });
+            e.preventDefault(); // when method is called, the default action of the event will not be triggered.
+                                // meand that clicked submit button will not take the browser to a new URL.
+        });
+
+        // handle "Get User Database" submit button click
+        $('#getUserDatabaseForm').submit(function (e) {
+            $.ajax({
+                type: 'GET',
+                url: 'http://localhost:8000/api/user'
+            })
+                .done(function (data) {
+                    // display the database in the textarea and trigger an input change event
+                    $('#showUserDatabase').val(JSON.stringify(data, null, 2)).trigger('input');
+                });
+            e.preventDefault(); // when method is called, the default action of the event will not be triggered.
+                                // meand that clicked submit button will not take the browser to a new URL.
+        });
+
+        // some fun jQuery here that is not necessary for operation
+        // this sets an event handler to resize the textarea after
+        // a change event is triggered the call is triggered earlier
+        // after the content received from the API is written to the
+        // textarea it resizes to the size of the contained text
+        // just a vanity addition really!
+        $("#showUserDatabase").on("input", function () {
+            this.style.height = (this.scrollHeight) + "px;overflow-y:hidden;";
+            this.style.height = "auto";
+            this.style.height = (this.scrollHeight) + "px";
+        });
+
+
+        //delete
+        /*$('#deleteUser').submit(function (e) {
+             $.ajax({
+                 type: 'GET',
+                 url: 'http://localhost:8000/api/deleteUser'
+             })
+
+             e.preventDefault(); // when method is called, the default action of the event will not be triggered.
+                                 // meand that clicked submit button will not take the browser to a new URL.
+         });*/
+        $('#deleteUser').submit(function (e) {
+            $.ajax({
+                type: 'DELETE',
+                url: 'http://localhost:8000/api/deleteUser'
+            }).done(function () {
+                console.log("Deleted last user");
+            });
+            e.preventDefault(); // when method is called, the default action of the event will not be triggered.
+                                // me and that clicked submit button will not take the browser to a new URL.
+        });
+
+        $('#updateUser').submit(function (e) {
+            $.ajax({
+                type: 'POST',
+                url: 'http://localhost:8000/api/updateUser'
+            }).done(function () {
+                console.log("Updated last user");
+            });
+
+            e.preventDefault(); // when method is called, the default action of the event will not be triggered.
+                                // meand that clicked submit button will not take the browser to a new URL.
+        });
+
+        //************************************************************************************************************
+
+        //start of physiotherapist AJAX####################################################################
+
+        // handle "Add Therapist to Database" submit button click
+        $('#addTherapistForm').submit(function (e) {
+            var userAddress = {
+                t_line1: $('input[name=t_line1]').val(),
+                t_line2: $('input[name=t_line2]').val(),
+                t_town: $('input[name=t_town]').val(),
+                t_county: $('input[name=t_county]').val(),
+                t_eircode: $('input[name=t_eircode]').val()
+            }
+            var user = {
+                t_title: $("#t_title").val(),
+                t_firstname: $('input[name=t_firstname]').val(),
+                t_surname: $('input[name=t_surname]').val(),
+                t_mobile: $('input[name=t_mobile]').val(),
+                t_homephone: $('input[name=t_homephone]').val(),
+                t_email: $('input[name=t_email]').val(),
+                t_homeaddress: userAddress
+            };
+            $.ajax({
+                type: 'POST',
+                url: 'http://localhost:8000/api/therapist',
+                data: user
+            })
+                .done(function (data) {
+                    // reset the form for next time!
+                    $("#t_title").val('');
+                    $('input[name=t_firstname]').val('');
+                    $('input[name=t_surname]').val('');
+                    $('input[name=t_mobile]').val('');
+                    $('input[name=t_homephone]').val('');
+                    $('input[name=t_email]').val('');
+                    $('input[name=t_line1]').val('');
+                    $('input[name=t_line2]').val('');
+                    $('input[name=t_town]').val('');
+                    $('input[name=t_county]').val('');
+                    $('input[name=t_eircode]').val('');
+                    // show confirmation message from API
+                    showUserModal(data);
+                    console.log(data);
+                });
+            e.preventDefault(); // when method is called, the default action of the event will not be triggered.
+                                // meand that clicked submit button will not take the browser to a new URL.
+        });
+
+        // handle "Get User Database" submit button click
+        $('#getTherapistDatabaseForm').submit(function (e) {
+            $.ajax({
+                type: 'GET',
+                url: 'http://localhost:8000/api/therapist'
+            })
+                .done(function (data) {
+                    // display the database in the textarea and trigger an input change event
+                    $('#showTherapistDatabase').val(JSON.stringify(data, null, 2)).trigger('input');
+                });
+            e.preventDefault(); // when method is called, the default action of the event will not be triggered.
+                                // meand that clicked submit button will not take the browser to a new URL.
+        });
+
+        // some fun jQuery here that is not necessary for operation
+        // this sets an event handler to resize the textarea after
+        // a change event is triggered the call is triggered earlier
+        // after the content received from the API is written to the
+        // textarea it resizes to the size of the contained text
+        // just a vanity addition really!
+        $("#showTherapistDatabase").on("input", function () {
+            this.style.height = (this.scrollHeight) + "px;overflow-y:hidden;";
+            this.style.height = "auto";
+            this.style.height = (this.scrollHeight) + "px";
+        });
+
+
+        //delete
+        /*$('#deleteUser').submit(function (e) {
+             $.ajax({
+                 type: 'GET',
+                 url: 'http://localhost:8000/api/deleteUser'
+             })
+
+             e.preventDefault(); // when method is called, the default action of the event will not be triggered.
+                                 // meand that clicked submit button will not take the browser to a new URL.
+         });*/
+        $('#deleteTherapist').submit(function (e) {
+            $.ajax({
+                type: 'DELETE',
+                url: 'http://localhost:8000/api/deleteTherapist'
+            }).done(function () {
+                console.log("Deleted specified therapist");
+            });
+            e.preventDefault(); // when method is called, the default action of the event will not be triggered.
+                                // me and that clicked submit button will not take the browser to a new URL.
+        });
+
+        $('#updateTherapist').submit(function (e) {
+            $.ajax({
+                type: 'POST',
+                url: 'http://localhost:8000/api/updateTherapist'
+            }).done(function () {
+                console.log("Updated specified therapist");
+            });
+
+            e.preventDefault(); // when method is called, the default action of the event will not be triggered.
+                                // meand that clicked submit button will not take the browser to a new URL.
+        });
+
+        //************************************************************************************************************
+
+        //start of therapy session AJAX###############################################################################
+        // handle "Add User to Database" submit button click
+        $('#addSessionForm').submit(function (e) {
+            var user = {
+                s_date: $('input[name=s_date]').val(),
+                s_time: $('input[name=s_time]').val(),
+                s_client: $('input[name=s_client]').val(),
+                s_therapist: $('input[name=s_therapist]').val(),
+                s_fee: $('input[name=s_fee]').val(),
+                s_number: $('input[name=s_number]').val(),
+                s_duration: $("#s_duration").val(),
+                s_type: $("#s_type").val(),
+                s_other: $('input[name=s_other]').val()
+            };
+            $.ajax({
+                type: 'POST',
+                url: 'http://localhost:8000/api/session',
+                data: user
+            })
+                .done(function (data) {
+                    // reset the form for next time!
+                    $('input[name=s_date]').val('');
+                    $('input[name=s_time]').val('');
+                    $('input[name=s_client]').val('');
+                    $('input[name=s_therapist]').val('');
+                    $('input[name=s_fee]').val('');
+                    $('input[name=s_number]').val('');
+                    $("#s_duration").val('');
+                    $("#s_type").val('');
+                    $('input[name=s_other]').val('');
+                    // show confirmation message from API
+                    showUserModal(data);
+                    console.log(data);
+                });
+            e.preventDefault(); // when method is called, the default action of the event will not be triggered.
+                                // meand that clicked submit button will not take the browser to a new URL.
+        });
+
+        // handle "Get User Database" submit button click
+        $('#getSessionDatabaseForm').submit(function (e) {
+            $.ajax({
+                type: 'GET',
+                url: 'http://localhost:8000/api/session'
+            })
+                .done(function (data) {
+                    // display the database in the textarea and trigger an input change event
+                    $('#showSessionDatabase').val(JSON.stringify(data, null, 2)).trigger('input');
+                });
+            e.preventDefault(); // when method is called, the default action of the event will not be triggered.
+                                // meand that clicked submit button will not take the browser to a new URL.
+        });
+
+        // some fun jQuery here that is not necessary for operation
+        // this sets an event handler to resize the textarea after
+        // a change event is triggered the call is triggered earlier
+        // after the content received from the API is written to the
+        // textarea it resizes to the size of the contained text
+        // just a vanity addition really!
+        $("#showSessionDatabase").on("input", function () {
+            this.style.height = (this.scrollHeight) + "px;overflow-y:hidden;";
+            this.style.height = "auto";
+            this.style.height = (this.scrollHeight) + "px";
+        });
+
+
+        //delete
+        /*$('#deleteUser').submit(function (e) {
+             $.ajax({
+                 type: 'GET',
+                 url: 'http://localhost:8000/api/deleteUser'
+             })
+
+             e.preventDefault(); // when method is called, the default action of the event will not be triggered.
+                                 // meand that clicked submit button will not take the browser to a new URL.
+         });*/
+        $('#deleteSession').submit(function (e) {
+            $.ajax({
+                type: 'DELETE',
+                url: 'http://localhost:8000/api/deleteSession'
+            }).done(function() {
+                console.log("Deleted last user");
+            });
+            e.preventDefault(); // when method is called, the default action of the event will not be triggered.
+                                // me and that clicked submit button will not take the browser to a new URL.
+        });
+
+        $('#updateSession').submit(function (e) {
+            $.ajax({
+                type: 'POST',
+                url: 'http://localhost:8000/api/updateSession'
+            }).done(function() {
+                console.log("Updated last user");
+            });
+
+            e.preventDefault(); // when method is called, the default action of the event will not be triggered.
+                                // meand that clicked submit button will not take the browser to a new URL.
+        });
+    });
+    //
+    //
+    //
+    // // Show the "User Added" Modal - this is a basic demo - change it!
+    // function showUserModal(data) {
+    //     document.getElementById('modalUserAddedMessage').innerHTML = data;
+    //     document.getElementById('modalUserAdded').style.display = 'block';
+    // }
+
+    /*$.ajax({
+        url: 'http://localhost:8000/api/remover',
+        type: 'DELETE',
+        data: {movie:movie}, //<-----this should be an object.
+        contentType:'application/json',  // <---add this
+        dataType: 'text',                // <---update this
+        success: function(result) {...},
+        error: function(result){...}
+    });*/
+
+</script>
+
+</body>
+
+</html>

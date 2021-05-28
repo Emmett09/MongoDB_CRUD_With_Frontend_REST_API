@@ -1,0 +1,324 @@
+Client Collection:
+
+[{
+  "_id": {
+    "$oid": "609dbb60ec10e4540c3d48f4"
+  },
+  "title": "Mr",
+  "firstname": "Emmett",
+  "surname": "Mulroy",
+  "mobile": "0833333333",
+  "homephone": "018252525",
+  "email": "emmettmulroy@hotmail.com",
+  "homeaddress": {
+    "line1": "123 Fake Street ",
+    "line2": "Fake Road",
+    "town": "Clonee",
+    "county": "Dublin",
+    "eircode": "D15CI90"
+  },
+  "addtional": {
+    "dob": "04/04/94",
+    "parent_guardian": "NA",
+    "permission_to_message": "Y",
+    "date_registered": "05/05/21",
+    "doctor": "Dr.Jones",
+    "reffered_by": "Friend"
+  }
+},{
+  "_id": {
+    "$oid": "609dbbddec10e4540c3d48f5"
+  },
+  "title": "Ms",
+  "firstname": "Sally",
+  "surname": "Jones",
+  "mobile": "0855555555",
+  "homephone": "018545478",
+  "email": "sjones@gmail.com",
+  "homeaddress": {
+    "line1": "97 Park Street",
+    "line2": "Park Drive",
+    "town": "Castleknock",
+    "county": "Dublin",
+    "eircode": "D18CK98"
+  },
+  "addtional": {
+    "dob": "30/10/2010",
+    "parent_guardian": "Mary Jones",
+    "permission_to_message": "N",
+    "date_registered": "05/05/21",
+    "doctor": "Dr. Pal",
+    "reffered_by": "Specialist"
+  }
+},{
+  "_id": {
+    "$oid": "609dbc5bec10e4540c3d48f6"
+  },
+  "title": "Mx",
+  "firstname": "Terry",
+  "surname": "Murphy",
+  "mobile": "0866666666",
+  "homephone": "018654125",
+  "email": "tmurphy@gmail.com",
+  "homeaddress": {
+    "line1": "31 Deerpark Close",
+    "line2": "Park Avenue",
+    "town": "Wicklow",
+    "county": "Wicklow",
+    "eircode": "DK191111"
+  },
+  "addtional": {
+    "dob": "26/08/65",
+    "parent_guardian": "NA",
+    "permission_to_message": "Y",
+    "date_registered": "06/05/21",
+    "doctor": "Dr. Phillips",
+    "reffered_by": "GP"
+  }
+},{
+  "_id": {
+    "$oid": "609dbd8fec10e4540c3d48f7"
+  },
+  "title": "Miss",
+  "firstname": "Nora",
+  "surname": "Kelly",
+  "mobile": "0874563214",
+  "homephone": "018542147",
+  "email": "nkelly@gmail.com",
+  "homeaddress": {
+    "line1": "12 Dominick Street",
+    "line2": "Shandon Street",
+    "town": "Cork",
+    "county": "Cork",
+    "eircode": "CK19FK18"
+  },
+  "addtional": {
+    "dob": "07/12/95",
+    "parent_guardian": "NA",
+    "permission_to_message": "N",
+    "date_registered": "10/05/21",
+    "doctor": "Dr. Murphy",
+    "reffered_by": "Mother"
+  }
+},{
+  "_id": {
+    "$oid": "609dbe55ec10e4540c3d48f8"
+  },
+  "title": "Dr",
+  "firstname": "Boris",
+  "surname": "Mahoney",
+  "mobile": "0854444444",
+  "homephone": "018456321",
+  "email": "bmahoney@hotmail.com",
+  "homeaddress": {
+    "line1": "32 Fake Street",
+    "line2": "Fake Road",
+    "town": "Clonsilla",
+    "county": "Dublin",
+    "eircode": "D18KL19"
+  },
+  "addtional": {
+    "dob": "17/12/95",
+    "parent_guardian": "NA",
+    "permission_to_message": "Y",
+    "date_registered": "14/05/21",
+    "doctor": "Dr. Friend",
+    "reffered_by": "GP"
+  }
+},{
+  "_id": {
+    "$oid": "609dc620c99dc47764650c78"
+  },
+  "title": "Mr",
+  "firstname": "Danny",
+  "surname": "Deleto",
+  "mobile": "0844444444",
+  "homephone": "018444444",
+  "email": "d_lete_this@gmail.com",
+  "homeaddress": {
+    "line1": "Delete Street",
+    "line2": "Delete Road",
+    "town": "Arklow",
+    "county": "Wicklow",
+    "eircode": "CK90WK89"
+  },
+  "addtional": {
+    "dob": "07/12/95",
+    "parent_guardian": "NA",
+    "permission_to_message": "Y",
+    "date_registered": "05/05/21",
+    "doctor": "Dr. Deleto",
+    "reffered_by": "Carrier Pigeon"
+  }
+}]
+
+Physiotherapist Collection:
+
+[{
+  "_id": {
+    "$oid": "609dbeaaec10e4540c3d48f9"
+  },
+  "t_title": "Dr",
+  "t_firstname": "Grace",
+  "t_surname": "Kelly",
+  "t_mobile": "0854545454",
+  "t_homephone": "018254545",
+  "t_email": "drkelly@gmail.com",
+  "t_homeaddress": {
+    "t_line1": "12 Park Gate",
+    "t_line2": "Park Street",
+    "t_town": "Castleknock",
+    "t_county": "Dublin",
+    "t_eircode": "D15FG34"
+  }
+},{
+  "_id": {
+    "$oid": "609dbf02ec10e4540c3d48fa"
+  },
+  "t_title": "Dr",
+  "t_firstname": "Regina ",
+  "t_surname": "Fellangi",
+  "t_mobile": "0874125412",
+  "t_homephone": "018456987",
+  "t_email": "drf@hotmail.com",
+  "t_homeaddress": {
+    "t_line1": "93 Benburn Road",
+    "t_line2": "Benburn Street",
+    "t_town": "Donabate",
+    "t_county": "Dublin",
+    "t_eircode": "D12KL09"
+  }
+},{
+  "_id": {
+    "$oid": "609dbf5bec10e4540c3d48fb"
+  },
+  "t_title": "Dr",
+  "t_firstname": "Orla",
+  "t_surname": "Keene",
+  "t_mobile": "0854445555",
+  "t_homephone": "018254521",
+  "t_email": "drokeene@gmail.com",
+  "t_homeaddress": {
+    "t_line1": "32 Fake Street",
+    "t_line2": "Fake Road",
+    "t_town": "Kells",
+    "t_county": "Meath",
+    "t_eircode": "AP85821"
+  }
+},{
+  "_id": {
+    "$oid": "609dbf9aec10e4540c3d48fc"
+  },
+  "t_title": "Dr",
+  "t_firstname": "John ",
+  "t_surname": "Murphy",
+  "t_mobile": "0896541236",
+  "t_homephone": "018247858",
+  "t_email": "jmurphy@yahoo.ie",
+  "t_homeaddress": {
+    "t_line1": "87 Real Street",
+    "t_line2": "Real Road",
+    "t_town": "Kildare",
+    "t_county": "Kildare",
+    "t_eircode": "KD98JK11"
+  }
+},{
+  "_id": {
+    "$oid": "609dbfcdec10e4540c3d48fd"
+  },
+  "t_title": "Dr",
+  "t_firstname": "Margaret ",
+  "t_surname": "Thomas",
+  "t_mobile": "0874444444",
+  "t_homephone": "018244444",
+  "t_email": "mthomas@gmail.com",
+  "t_homeaddress": {
+    "t_line1": "45 New Street",
+    "t_line2": "New Town",
+    "t_town": "Kilkenny",
+    "t_county": "Kilkenny",
+    "t_eircode": "KL89444"
+  }
+}]
+
+Session Collection:
+
+[{
+  "_id": {
+    "$oid": "609dc01dec10e4540c3d48fe"
+  },
+  "s_date": "21/05/2021",
+  "s_time": "3.30pm",
+  "s_client": "Emmett Mulroy",
+  "s_therapist": "Grace Kelly",
+  "s_fee": "€50",
+  "s_number": "3",
+  "s_duration": "60m",
+  "s_type": "Stretching",
+  "s_other": ""
+},{
+  "_id": {
+    "$oid": "609dc088ec10e4540c3d48ff"
+  },
+  "s_date": "25/05/2021",
+  "s_time": "1.00pm",
+  "s_client": "Sally Jones",
+  "s_therapist": "Regina Fellangi",
+  "s_fee": "€100",
+  "s_number": "1",
+  "s_duration": "60m",
+  "s_type": "Technology",
+  "s_other": "Might be late"
+},{
+  "_id": {
+    "$oid": "609dc0baec10e4540c3d4900"
+  },
+  "s_date": "15/05/2021",
+  "s_time": "4.00pm",
+  "s_client": "Terry Murphy",
+  "s_therapist": "Orla Keene",
+  "s_fee": "€50",
+  "s_number": "2",
+  "s_duration": "60m",
+  "s_type": "Massage",
+  "s_other": ""
+},{
+  "_id": {
+    "$oid": "609dc101ec10e4540c3d4901"
+  },
+  "s_date": "10/05/21",
+  "s_time": "3.30",
+  "s_client": "Nora kelly",
+  "s_therapist": "John Murphy",
+  "s_fee": "€60",
+  "s_number": "3",
+  "s_duration": "NoShow",
+  "s_type": "Assessment",
+  "s_other": "Missed fee attached"
+},{
+  "_id": {
+    "$oid": "609dc145ec10e4540c3d4902"
+  },
+  "s_date": "30/05/2021",
+  "s_time": "1.30pm",
+  "s_client": "Boris Mahoney",
+  "s_therapist": "Margaret Thomas",
+  "s_fee": "€0",
+  "s_number": "5",
+  "s_duration": "Cancelled",
+  "s_type": "Assessment",
+  "s_other": "Cancelled in advance"
+},{
+  "_id": {
+    "$oid": "609dc90118d0d227c49d8dd9"
+  },
+  "s_date": "21/05/2021",
+  "s_time": "3.30pm",
+  "s_client": "Danny Deleto",
+  "s_therapist": "Dee Leteme",
+  "s_fee": "€90",
+  "s_number": "563",
+  "s_duration": "60m",
+  "s_type": "Technology",
+  "s_other": ""
+}]
